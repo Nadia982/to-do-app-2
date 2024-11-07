@@ -1,72 +1,106 @@
-*, *:after, *:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Roboto", sans-serif;
-    height: 100vh;
-    display: flex;
-    margin: 2rem auto;
-    align-items: flex-start;
-    justify-content: center; 
-background-image: linear-gradient(135deg, #7028e4 0%, #7a3254 100%);
-background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-background-image: linear-gradient(to bottom, #505285 0%, #585e92 50%, #65689f 100%);
-/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
-/* background-image: linear-gradient(to right, #434343 0%, black 100%); */
-background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
- background-blend-mode: multiply,multiply;
- background-image: radial-gradient( circle 382px at 50% 50.2%,  rgba(73,76,212,1) 0.1%, rgba(3,1,50,1) 100.2% );
- background-image: radial-gradient( circle farthest-corner at 48.4% 47.5%,  rgba(122,183,255,1) 0%, rgba(21,83,161,1) 90% );
- /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,41,247,1) 0%, rgba(24,22,39,1)  */
-}
-  
-  .container{
-    width: 90%;
-    max-width: 700px;
-    min-height: 400px;
-    padding: 2rem;
-    background: transparent;
-    border: 2px solid #e6b7eca1;
-    border-radius: 10px;
-    backdrop-filter: blur(15px);
-  }
-  
-  h1, h2{
-    color: #eee;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  .input-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-  }
-  
-.todos-container{
-    border: 1px solid red;
-    min-height: 3rem;
-    display: flex;
-    gap: 1rem;
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  .todo-input{
-    flex: 1;
-    
-  }
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  display: flex;
+  margin: 2rem auto;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: linear-gradient(135deg, #7028e4 0%, #7a3254 100%);
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #505285 0%,
+    #585e92 50%,
+    #65689f 100%
+  );
+  /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
+  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+  background-image: radial-gradient(
+    circle 382px at 50% 50.2%,
+    rgba(73, 76, 212, 1) 0.1%,
+    rgba(3, 1, 50, 1) 100.2%
+  );
+  background-image: radial-gradient(
+    circle farthest-corner at 48.4% 47.5%,
+    rgba(122, 183, 255, 1) 0%,
+    rgba(21, 83, 161, 1) 90%
+  );
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,41,247,1) 0%, rgba(24,22,39,1)  */
+}
 
-  .todos{
-    border: 1px solid yellow;
-    flex: 30%;
-    min-height: 50vh;
-    padding: .4rem;
-  }
+.container {
+  width: 90%;
+  max-width: 700px;
+  min-height: 400px;
+  padding: 2rem;
+  background: transparent;
+  border: 2px solid #e6b7eca1;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+}
 
+h1,
+h2 {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 
-  
-  /* .todo-input::placeholder{
-    
-  }
-   */
+.todos-container {
+  border: 1px solid red;
+  min-height: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #e6b7eca1;
+  border-radius: 1rem;
+  color: #eee;
+  font-size: 1rem;
+  margin-right: 10px;
+
+}
+.todo-input::placeholder {
+  color: #eee;
+}
+.todo-input:focus{
+    outline: 1px solid #e6b7eca1;
+}
+
+.todos {
+  border: 1px solid yellow;
+  flex: 30%;
+  min-height: 50vh;
+  padding: 0.4rem;
+}
