@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --border: #e6b7eca1;
+  --accent-blue: rgb(122, 183, 255);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
@@ -21,8 +26,7 @@ body {
     #585e92 50%,
     #65689f 100%
   );
-  /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
-  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.15) 0%,
@@ -45,7 +49,6 @@ body {
     rgba(122, 183, 255, 1) 0%,
     rgba(21, 83, 161, 1) 90%
   );
-  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,41,247,1) 0%, rgba(24,22,39,1)  */
 }
 
 .container {
@@ -54,7 +57,7 @@ body {
   min-height: 400px;
   padding: 2rem;
   background: transparent;
-  border: 2px solid #e6b7eca1;
+  border: 2px solid var(--border);
   border-radius: 10px;
   backdrop-filter: blur(15px);
 }
@@ -73,7 +76,6 @@ h2 {
 }
 
 .todos-container {
-  border: 1px solid red;
   min-height: 3rem;
   display: flex;
   gap: 1rem;
@@ -84,23 +86,55 @@ h2 {
   outline: none;
   padding: 10px;
   background-color: transparent;
-  border: 2px solid #e6b7eca1;
+  border: 2px solid var(--border);
   border-radius: 1rem;
   color: #eee;
   font-size: 1rem;
   margin-right: 10px;
-
 }
 .todo-input::placeholder {
-  color: #eee;
+  color: #bfbfbf;
 }
-.todo-input:focus{
-    outline: 1px solid #e6b7eca1;
+.todo-input:focus {
+  outline: 2px solid var(--border);
 }
 
 .todos {
-  border: 1px solid yellow;
+  border: 1px solid var(--border);
   flex: 30%;
   min-height: 50vh;
   padding: 0.4rem;
+  border-radius: 1rem;
+}
+
+.add-button {
+  border: 2px solid var(--accent-blue);
+  background: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-button:focus {
+    border: 2px solid var(--accent-blue);
+    outline: 4px solid var(--border);
+}
+.add-button:hover{
+        background-color: white;
+}
+
+.fa-plus-circle {
+  outline: none;
+  color: white;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.fa-plus-circle:hover{
+    color: var(--accent-blue);
 }
