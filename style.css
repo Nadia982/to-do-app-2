@@ -93,7 +93,7 @@ h2 {
   margin-right: 10px;
 }
 .todo-input::placeholder {
-  color: #bfbfbf;
+  color: white;
 }
 .todo-input:focus {
   outline: 2px solid var(--border);
@@ -137,4 +137,12 @@ h2 {
 
 .fa-plus-circle:hover{
     color: var(--accent-blue);
+}
+
+.description{
+    color: white;
+}
+
+.remaining{
+    color: white;
 }
