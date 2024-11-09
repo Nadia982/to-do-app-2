@@ -103,7 +103,7 @@ h2 {
   border: 1px solid var(--border);
   flex: 30%;
   min-height: 50vh;
-  padding: 0.4rem;
+  padding: .6rem;
   border-radius: 1rem;
 }
 
