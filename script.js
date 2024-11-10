@@ -1,23 +1,54 @@
 //Helper functions
-function $(input){
-    return document.querySelector(input);
+function $(input) {
+  return document.querySelector(input);
 }
-
 
 const input = $("input");
 const addButton = $(".add-button");
 const todos = $(".todos");
 let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
 
-function getTodoHTML(todo, index){
-    let checked = todo.status === "completed"? "checked" : "";
-    return `
-    <li class="todo>
+function getTodoHTML(todo, index) {
+  let checked = todo.status === "completed" ? "checked" : "";
+  return `
+    <li class="todo">
     <label for="${index}">
-        <input id="${index}" onclick="updateStatus(this) type="checkbox" ${checked}>
+        <input id="${index}" onclick="updateStatus(this)" type="checkbox" ${checked}>
         <span class="checked">${todo.name}</span>  
     </label>
-    <button onclick="deleteTodo(this) class="delete-btn" data-index="${index}><i class="fa fa-times></i></button>
+    <button onclick="deleteTodo(this)" class="delete-btn" data-index="${index}"><i class="fa fa-times"></i></button>
     </li>
-    `
+    `;
 }
+
+function showTodos() {
+  todosJson
+    ? (todos.innerHTML = todosJson
+        .map((todo, index) => getTodoHTML(todo, index))
+        .join(""))
+    : null;
+}
+
+function addTodo(todo) {
+  input.value = "";
+  todosJson.unshift({ name: todo, status: "pending" });
+  localStorage.setItem("todos", JSON.stringify(todosJson));
+    showTodos();
+}
+
+input.addEventListener("keyup", (e) => {
+  let todo = input.value.trim();
+  if (!todo || e.key != "Enter") {
+    return;
+  }
+  addTodo(todo);
+});
+
+addButton.addEventListener("click", () => {
+  let todo = input.value.trim();
+  if (!todo) {
+    return;
+  }
+  addTodo(todo);
+});
+
