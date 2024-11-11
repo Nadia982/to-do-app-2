@@ -12,10 +12,9 @@ function getTodoHTML(todo, index) {
   let checked = todo.status === "completed" ? "checked" : "";
   return `
     <li class="todo">
-    <label for="${index}">
+    <label for="${index}"></label>
         <input id="${index}" onclick="updateStatus(this)" type="checkbox" ${checked}>
-        <span class="checked">${todo.name}</span>  
-    </label>
+        <p class="checked">${todo.name}</p>  
     <button onclick="deleteTodo(this)" class="delete-btn" data-index="${index}"><i class="fa fa-times"></i></button>
     </li>
     `;
