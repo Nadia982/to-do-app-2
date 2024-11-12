@@ -11,12 +11,12 @@ let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
 function getTodoHTML(todo, index) {
   let checked = todo.status === "completed" ? "checked" : "";
   return `
-    <div class="todo">
+    <li class="todo">
     
         <input id="${index}" onclick="updateStatus(this)" type="checkbox" ${checked}>
         <p class="checked">${todo.name}</p>  
     <button onclick="deleteTodo(this)" class="delete-btn" data-index="${index}"><i class="fa fa-times"></i></button>
-    </div>
+    </li>
     `;
 }
 
