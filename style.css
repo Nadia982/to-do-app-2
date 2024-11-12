@@ -90,13 +90,14 @@ h2 {
 .todo-input {
   flex: 1;
   outline: none;
-  padding: 10px;
+  padding: 3px;
   background-color: transparent;
   border: 2px solid var(--border);
-  border-radius: 1rem;
+  border-radius: .7rem;
   color: var(--text-color);
   font-size: 1rem;
   margin-right: 10px;
+  height: 2.5rem;
 }
 .todo-input::placeholder {
   color: var(--text-color);
@@ -108,7 +109,7 @@ h2 {
 
 .todos {
   border: 1px solid var(--border);
-  flex: 30%;
+  flex:0 0 30%;
   min-height: 50vh;
   padding: .6rem;
   border-radius: 1rem;
@@ -159,18 +160,21 @@ h2 {
 }
 
 .todo {
-    max-width: 20vw;
+    width: 200px;
     list-style: none;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: var(--light-accent);
     border-radius: 5px;
     margin: 10px 0;
-    padding: 12px;
+    padding: 6px;
     border: 2px solid var(--accent-blue);
     transition: all 0.2s ease;
+    word-wrap: break-word;
+    white-space: normal;   
+    overflow-wrap: break-word;
 }
 
 .todo:first-child{
@@ -186,15 +190,17 @@ h2 {
 }
 
 .todo p{
-    max-width: 20vw;
- /* display: inline-block; */
+    
+    width: 150px;
+    display: inline-block;
     cursor: pointer;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    max-width: 100%;
-    word-wrap: break-word; 
+    
+flex: 0 0 80%;
+    /* min-height: 5rem; */
+    word-wrap: break-word;
+    word-break: break-all;
     white-space: normal;   
-    overflow-wrap: break-word; 
-
+    overflow-wrap: break-word;
 }
