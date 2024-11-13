@@ -12,10 +12,9 @@ function getTodoHTML(todo, index) {
   let checked = todo.status === "completed" ? "checked" : "";
   return `
     <li class="todo">
-    
-        <input id="${index}" onclick="updateStatus(this)" type="checkbox" ${checked}>
+        <input class="todo-checkbox" id="${index}" onclick="updateStatus(this)" type="checkbox" ${checked}>
         <p class="checked">${todo.name}</p>  
-    <button onclick="deleteTodo(this)" class="delete-btn" data-index="${index}"><i class="fa fa-times"></i></button>
+        <button onclick="deleteTodo(this)" class="delete-btn" data-index="${index}"><i class="fa fa-times"></i></button>
     </li>
     `;
 }
@@ -32,7 +31,7 @@ function addTodo(todo) {
   input.value = "";
   todosJson.unshift({ name: todo, status: "pending" });
   localStorage.setItem("todos", JSON.stringify(todosJson));
-    showTodos();
+  showTodos();
 }
 
 input.addEventListener("keyup", (e) => {
@@ -50,4 +49,3 @@ addButton.addEventListener("click", () => {
   }
   addTodo(todo);
 });
-

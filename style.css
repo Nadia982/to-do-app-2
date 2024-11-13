@@ -4,14 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
-/* *{
-    border: 1px solid red;
-} */
+
 
 :root {
   /* --border: #e6b7eca1; */
-  --border: #1b155f;   
+  --border: #1b155f;
   /* --accent-blue: rgb(122, 183, 255); */
   --text-color: #000000;
   --background-color: #fff;
@@ -91,17 +90,17 @@ h2 {
 .todo-input {
   flex: 1;
   outline: none;
-  padding: 3px;
+  padding: 0.3rem;
   background-color: transparent;
   border: 2px solid var(--border);
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   color: var(--text-color);
   font-size: 1rem;
   margin-right: 10px;
   height: 2.5rem;
 }
 .todo-input::placeholder {
-    padding: .3rem;
+  padding: 0.3rem;
   color: var(--text-color);
 }
 .todo-input:focus {
@@ -111,9 +110,9 @@ h2 {
 
 .todos {
   border: 1px solid var(--border);
-  flex:0 0 31.5%;
+  flex: 0 0 31.5%;
   min-height: 50vh;
-  padding: 1rem .4rem;
+  padding: 1rem 0.4rem;
   border-radius: 1rem;
 }
 
@@ -131,16 +130,16 @@ h2 {
   border: 2px solid var(--background-color);
 }
 .add-button:focus {
-    outline: 4px solid var(--accent-blue);
-    border: 2px solid white;
+  outline: 4px solid var(--accent-blue);
+  border: 2px solid white;
 }
-.add-button:hover{
-        background-color: white;
+.add-button:hover {
+  background-color: white;
 }
 
 .fa-plus-circle {
-    transform-origin: center;
-    transform: scale(.8);
+  transform-origin: center;
+  transform: scale(0.8);
   border-radius: 50%;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -149,61 +148,86 @@ h2 {
   border: none;
 }
 
-.fa-plus-circle:hover{
-    color: var(--accent-blue);
+.fa-plus-circle:hover {
+  color: var(--accent-blue);
 }
 
-.description{
-    color: var(--text-color);
+.description {
+  color: var(--text-color);
 }
 
-.remaining{
-    color: var(--text-color);
+.remaining {
+  color: var(--text-color);
 }
 
 .todo {
-    /* width: 200px; */
-    list-style: none;
-    display: flex;
-    gap: .2rem;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: var(--light-accent);
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 6px;
-    border: 2px solid var(--accent-blue);
-    transition: all 0.2s ease;
-    word-wrap: break-word;
-    white-space: normal;   
-    overflow-wrap: break-word;
+  list-style: none;
+  display: flex;
+  gap: 0.2rem;
+  align-items:self-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--accent-blue);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 6px;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
-.todo:first-child{
+/* .todo-checkbox{
+    visibility: hidden;
+} */
+
+.checked, .delete-btn{
     margin-top: 0;
 }
 
-.todo:last-child{
-    margin-bottom: 0;
+.todo:first-child {
+  margin-top: 0;
 }
 
-.todo:hover{
-    background-color: var(--accent-blue);
+.todo:last-child {
+  margin-bottom: 0;
 }
 
-.todo p{
-    
-    width: 150px;
-    display: inline-block;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    
-flex: 0 0 78%;
-    /* min-height: 5rem; */
-    word-wrap: break-word;
-    word-break: break-all;
-    white-space: normal;   
-    overflow-wrap: break-word;
+.todo:hover {
+  background-color: var(--accent-blue);
+}
+
+.todo p {
+  width: 150px;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex: 0 0 78%;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding-left: 10px;
+}
+
+.todo p:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: -30px;
+    border-radius: 100px;
+    border: 2px solid var(--text-color);
+}
+
+input:checked + p{
+    text-decoration:line-through;
+}
+
+.todo:hover input:checked + p::before, input:checked + p::before{
+    background: url(./check.svg) 50% 50% no-repeat white;
+    background-size: 19px 19px;
+    border-color: #0bcb2b;
 }
