@@ -6,7 +6,9 @@ function $(input) {
 const input = $("input");
 const addButton = $(".add-button");
 const todos = $(".todos");
+const pending = $(".pending")
 let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
+
 
 function getTodoHTML(todo, index) {
   let checked = todo.status === "completed" ? "checked" : "";
@@ -21,7 +23,7 @@ function getTodoHTML(todo, index) {
 
 function showTodos() {
   todosJson
-    ? (todos.innerHTML = todosJson
+    ? (pending.innerHTML = todosJson
         .map((todo, index) => getTodoHTML(todo, index))
         .join(""))
     : null;
@@ -30,7 +32,7 @@ function showTodos() {
 function addTodo(todo) {
   input.value = "";
   todosJson.unshift({ name: todo, status: "pending" });
-  localStorage.setItem("todos", JSON.stringify(todosJson));
+  localStorage.setItem("pending", JSON.stringify(todosJson));
   showTodos();
 }
 
@@ -49,3 +51,4 @@ addButton.addEventListener("click", () => {
   }
   addTodo(todo);
 });
+
